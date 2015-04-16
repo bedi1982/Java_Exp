@@ -1,10 +1,12 @@
-import java.util.Scanner;
-
 public class Main {
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		String nome;
-		nome = sc.next();
-		System.out.println("Nome-> " + nome);
+		
+		Sobrenome sobrenome = new Sobrenome();
+		Nome nome = new Nome();
+		
+		nome.setNome("Sergio Rafael");
+		sobrenome.setSobrenome(" Lemke");
+		
+		System.out.println(nome.getNome() + sobrenome.getSobrenome());
 	}
 }
