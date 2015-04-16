@@ -1,9 +1,17 @@
 import java.util.Random;
+import java.util.Scanner;
 
 
 public class Teste3 {
 	public static void main(String[] args){
 
+		//Scanner Example:
+				Scanner sc = new Scanner(System.in);
+				String nome;
+				nome = sc.next();
+				System.out.println("Nome-> " + nome);
+				sc.close();
+		
 		/*
 		for(int i = 0; i <= 10; i+=2){
 			System.out.println(i);
