@@ -5,7 +5,10 @@ JEE - Enterprise
 
 javaC(compiler) -> .class(bytecode) -> (JVM) -> OS -> user
 
-msg += /mensagem(ela mesmo)+ooutro valor	
+msg += /mensagem(ela mesmo)+o outro valor	
 Integer.parseInt("1");
 
-http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1147
+Public: All
+Private: Only the class (not children in case of inheritage)
+Protected: Only accessible by the package
+Interface: like a C++ .header file
