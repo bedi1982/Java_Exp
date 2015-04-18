@@ -4,54 +4,52 @@ import java.util.Arrays;
 import java.util.Random;
 
 public class Metodos {
-
-	public void GenerateTable(){
+	public char[][] GenerateTable(){
 		
-		int[] bomb0 = this.ArmTheBombs();
-		int[] bomb1 = this.ArmTheBombs();
-		int[] bomb2 = this.ArmTheBombs();
-		int[] bomb3 = this.ArmTheBombs();
-		int[] bomb4 = this.ArmTheBombs();
-		int[] bomb5 = this.ArmTheBombs();
-		
-		//create the table in ram
+		//create the table
 		char[][] tab = new char[10][10];
 
-		//print Pretty Table
+		//print the Table with *
 		for(int i = 0; i <tab.length; i++) {
-			Arrays.fill(tab[i], '-');
+			Arrays.fill(tab[i], ' ');
 		}
-
-		//Arming the bombs!
-		tab[bomb0[0]][bomb0[1]] = '0';
-		tab[bomb1[0]][bomb1[1]] = '0';
-		tab[bomb2[0]][bomb2[1]] = '0';
-		tab[bomb3[0]][bomb3[1]] = '0';
-		tab[bomb4[0]][bomb4[1]] = '0';
-		tab[bomb5[0]][bomb5[1]] = '0';
+		
+		//get x,y coordinates, then place the bomb in the retrieved coordinate
+		int[] bomb0 = this.ArmTheBombs(tab);
+		tab[bomb0[0]][bomb0[1]] = '$';
+		
+		int[] bomb1 = this.ArmTheBombs(tab);
+		tab[bomb1[0]][bomb1[1]] = '$';
+		
+		int[] bomb2 = this.ArmTheBombs(tab);
+		tab[bomb2[0]][bomb2[1]] = '$';
+		
+		int[] bomb3 = this.ArmTheBombs(tab);
+		tab[bomb3[0]][bomb3[1]] = '$';
+		
+		int[] bomb4 = this.ArmTheBombs(tab);
+		tab[bomb4[0]][bomb4[1]] = '$';
+		
+		int[] bomb5 = this.ArmTheBombs(tab);
+		tab[bomb5[0]][bomb5[1]] = '$';
 
 		//Print the table
 		System.out.println(Arrays.deepToString(tab).replace("],","]\n").replace(","," "));
+		return tab;
 	}
 
-	public int[] ArmTheBombs(){
+	public int[] ArmTheBombs(char[][] tab){
 		int[] x = new int[2];
 
 		Random rn = new Random();
-		if(x[0] != '-'){
-			x[0] = rn.nextInt(10);
-		}else{
-			this.GenerateTable();
-		}
-
+		x[0] = rn.nextInt(10);
+		
 		Random rn2 = new Random();
-		if(x[0] != '-'){
-			x[1] = rn2.nextInt(10);
-		}else{
-			this.GenerateTable();
+		x[1] = rn2.nextInt(10);
+		
+		if(tab[x[0]][x[1]] != ' '){//check if the position in the table is available
+			x = this.ArmTheBombs(tab);
 		}
-
-		System.out.println("Bomb Placed at: " + "L" + (x[0]) + " " + "C" + x[1]);
 		return x;
 	}
 }

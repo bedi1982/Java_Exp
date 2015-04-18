@@ -6,13 +6,7 @@ public class Main {
 	public static void main(String[] args) {
 		Metodos metodos = new Metodos();
 		
-		int[] up = new int[2]; //user position
-		
-		
-		
-		
-		
-		
+		//int[] up = new int[2]; //user position		
 		metodos.GenerateTable();
 	}
 }
