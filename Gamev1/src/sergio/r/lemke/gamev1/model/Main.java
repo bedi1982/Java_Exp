@@ -7,6 +7,6 @@ public class Main {
 		Metodos metodos = new Metodos();
 		
 		//int[] up = new int[2]; //user position		
-		metodos.GenerateTable();
+		metodos.generateTable();
 	}
 }
