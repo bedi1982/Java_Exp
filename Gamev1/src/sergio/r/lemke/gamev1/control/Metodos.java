@@ -1,5 +1,6 @@
 package sergio.r.lemke.gamev1.control;
 
+
 import java.util.Arrays;
 import java.util.Random;
 
@@ -13,6 +14,10 @@ public class Metodos {
 		for(int i = 0; i <tab.length; i++) {
 			Arrays.fill(tab[i], '*');
 		}
+		/*
+		for(int idade : idades){
+			
+		}*/
 		
 		//get x,y coordinates, then place the bomb in the retrieved coordinate
 		int[] bomb0 = this.placeTheBombs(tab);
@@ -35,6 +40,9 @@ public class Metodos {
 
 		//Print the table
 		System.out.println(Arrays.deepToString(tab).replace("],","]\n").replace(","," "));
+		
+		// \t to break in column 
+		
 		return tab;
 	}
 
