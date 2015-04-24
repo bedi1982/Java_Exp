@@ -12,3 +12,6 @@ Public: All
 Private: Only the class (not children in case of inheritage)
 Protected: Only accessible by the package
 Interface: like a C++ .header file
+
+List<String>cidades = new Arraylist<>(); //java certificacao, diamond implementa que nao precisa colocar 'String' no segundo<>
+
