@@ -1,12 +1,10 @@
 package sergio.r.lemke.gamev1.model;
 
-import sergio.r.lemke.gamev1.control.Metodos;
+import sergio.r.lemke.gamev1.play.Play;
 
 public class Main {
 	public static void main(String[] args) {
-		Metodos metodos = new Metodos();
-		
-		//int[] up = new int[2]; //user position		
-		metodos.generateTable();
+		Play p = new Play();
+		p.Jogar();
 	}
 }

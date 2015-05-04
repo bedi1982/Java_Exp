@@ -1,6 +1,4 @@
 package sergio.r.lemke.gamev1.control;
-
-
 import java.util.Arrays;
 import java.util.Random;
 
@@ -39,8 +37,7 @@ public class Metodos {
 		tab[bomb5[0]][bomb5[1]] = '$';
 
 		//Print the table
-		System.out.println(Arrays.deepToString(tab).replace("],","]\n").replace(","," "));
-		
+		//System.out.println(Arrays.deepToString(tab).replace("],","]\n").replace(","," "));
 		// \t to break in column 
 		
 		return tab;
