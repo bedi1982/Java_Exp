@@ -28,9 +28,13 @@ public class Play{
 		System.out.flush();
 		System.out.println("Insira seu nome");
 		String nome = sc.next();
-		System.out.println("O seu usuário está representado com a letra P\n");
+		System.out.println("O seu usuário está representado com a letra P no tabuleiro\n");
+		System.out.println("Escolha 1 apetrecho:");
+		System.out.println("g para gasolina(code in progress)");
+		System.out.println("m para madeira(code in progress)");
+		System.out.println("p para pedra(code in progress)");
+		System.out.println("b para bomba atomica(todos morrem)(code in progress)\n");
 		System.out.println(Arrays.deepToString(tabfake).replace("],","]\n").replace(","," "));
-
 
 		String t;
 		boolean a = true;
