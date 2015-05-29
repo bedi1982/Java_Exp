@@ -1,9 +1,8 @@
-package org.sergio.CllinicaVeterinaria;
+package org.sergio.ClinicaVeterinaria.View;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.util.Calendar;
+import java.util.Date;
 
 import org.sergio.ClinicaVeterinaria.jdbc.ConnectionFactory;
 
@@ -18,7 +17,7 @@ public class Main {
 			PreparedStatement ps = conexao.prepareStatement(sql);
 			ps.setInt(1, 369811969);
 			ps.setString(2, "Osnildo");
-			ps.setDate(3, new java.sql.Date(Calendar.getInstance().getTime().getTime()));
+			ps.setDate(3, new java.sql.Date(new Date().getTime()));
 
 			ps.execute();
 			System.out.println("Recorded in db");
@@ -28,4 +27,4 @@ public class Main {
 			e.printStackTrace();
 		}
 	}
-}	
+}
