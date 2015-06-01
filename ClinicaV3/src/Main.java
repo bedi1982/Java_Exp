@@ -10,6 +10,7 @@ public class Main {
 
 	public static void main(String[] args) throws SQLException {
 		
+		//Manual//
 		Pessoa pessoa = new Pessoa();
 		pessoa.setNome("Lombarde");
 		pessoa.setCPF(369811969);
