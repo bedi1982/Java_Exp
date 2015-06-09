@@ -39,17 +39,15 @@ public class PessoaDAO {
 			Connection conexao = new ConnectionFactory().getConnection();
 			System.out.println("Connected...");
 			
-			String sql = "delete from Pessoa where (cpf) like values (?)";
-			
+			String sql = "delete from pessoa where cpf like ?";
 			PreparedStatement ps = conexao.prepareStatement(sql);
 			ps.setInt(1, pessoa.getCPF());
-			//ps.setString(2, pessoa.getNome());
-			//ps.setDate(3, new java.sql.Date(new Date(0).getTime()));
-
 			ps.execute();
-			System.out.println("Recorded in db");
+			
+			
+			System.out.println("Recorded in db: " + "Exluded " + pessoa.getCPF());
 			ps.close();
-			System.out.println("Connection closed");
+			System.out.println("dbConnection closed");
 			return true;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -57,17 +55,21 @@ public class PessoaDAO {
 		}
 	}
 	
-	public boolean UpdatePessoa(Pessoa pessoa) throws SQLException{
+	public boolean UpdatePessoa(Pessoa pessoa, int Id_Remove) throws SQLException{
 		try {
 			Connection conexao = new ConnectionFactory().getConnection();
 			System.out.println("Connected...");
 			
-			String sql = "insert into Pessoa (cpf, nome, nascimento) values (?,?,?)";
+			String sql = "update pessoa set nome = ?, cpf= ?, nascimento = ? where cpf = ?";
+			//insert into pessoa (nome, cpf, nascimento) values ('testenome', 999888556, 2015-06-10);
 			
 			PreparedStatement ps = conexao.prepareStatement(sql);
-			ps.setInt(1, pessoa.getCPF());
-			ps.setString(2, pessoa.getNome());
-			ps.setDate(3, new java.sql.Date(new Date(0).getTime()));
+			ps.setString(1, pessoa.getNome()+"lala");
+			ps.setInt(2, pessoa.getCPF());
+			ps.setDate(3, new java.sql.Date(new Date().getTime()));
+			System.out.println("teste Data: " + pessoa.getData());
+
+			ps.setInt(4, Id_Remove);
 
 			ps.execute();
 			System.out.println("Recorded in db");
